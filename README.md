@@ -1,1 +1,1 @@
-# A simple skeleton for my C++ projects
+# Frey : A simple ray tracer

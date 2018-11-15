@@ -31,7 +31,10 @@ set(CMAKE_CXX_STANDARD 14)
 set(COMMON_INCLUDES include/)
 include_directories(${COMMON_INCLUDES})
 
-set(SOURCES src/main.cpp)
+set(SOURCES 
+    src/main.cpp
+    src/math/vector.cpp
+)
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
 
@@ -41,12 +44,16 @@ add_subdirectory(external/googletest)
 enable_testing()
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-file(GLOB TEST_SRC_FILES test/*.cpp)
 
-add_executable(unit_tests ${TEST_SRC_FILES})
-target_link_libraries(unit_tests gtest gtest_main)
+set(MATH_TEST_SOURCES 
+    src/math/vector.cpp
+    test/math_tests/vector_test.cpp
+)
 
-add_test(UnitTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unit_tests)
+add_executable(math_tests ${MATH_TEST_SOURCES})
+target_link_libraries(math_tests gtest gtest_main)
+
+add_test(MathTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/math_tests)
 
 # Building docs =============================================
 
