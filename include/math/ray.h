@@ -17,7 +17,20 @@ namespace frey{
         private:
             vector origin, direction;
         public:
+            /* \brief Contructor for the ray class sets the origin and the direction <br>
+             *        vector the ray.
+             * \param orig the origin vector
+             * \param dir the direction vector
+             */
             ray(vector orig, vector dir);
+
+            /* \brief get_origin() returns the origin vector of the ray
+             */
+            inline vector get_origin() { return origin; }
+
+            /* \brief get_direction() return the direction vector the ray
+             */
+            inline vector get_direction() { return direction; }
     };
 
 }
