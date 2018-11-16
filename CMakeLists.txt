@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 # Initial Setup ============================================
 
-set(PROJECT_NAME skeleton_project)
+set(PROJECT_NAME frey)
 project(${PROJECT_NAME})
 
 set( CMAKE_BUILD_TYPE Release)
@@ -34,6 +34,7 @@ include_directories(${COMMON_INCLUDES})
 set(SOURCES 
     src/main.cpp
     src/math/vector.cpp
+    src/math/ray.cpp
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
