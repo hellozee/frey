@@ -34,6 +34,7 @@ set(SOURCES
     src/main.cpp
     src/math/vector.cpp
     src/math/ray.cpp
+    src/camera/camera.cpp
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
