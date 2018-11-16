@@ -27,8 +27,11 @@ set(CMAKE_CXX_STANDARD 14)
 
 # Building the executable ===================================
 
+add_subdirectory(external/lodepng)
+
 set(COMMON_INCLUDES include/)
 include_directories(${COMMON_INCLUDES})
+include_directories(${lodepng_SOURCE_DIR})
 
 set(SOURCES 
     src/main.cpp
@@ -38,6 +41,16 @@ set(SOURCES
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
+
+add_dependencies(
+    frey
+    lodepng
+)
+
+target_link_libraries( 
+     frey
+     lodepng
+)
 
 # Building the tests ========================================
 
