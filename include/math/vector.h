@@ -27,19 +27,19 @@ namespace frey{
             double x,y,z;
         public:
 
-            /* \brief An empty constructor for the frey::vector class, <br>
-             *        constructs a frey::vector{x : 1.0, y : 1.0, z : 1.0}
+            /* \brief An empty constructor for the vector class, <br>
+             *        constructs a vector{x : 1.0, y : 1.0, z : 1.0}
              */
             vector();
             
             /* \brief A constructor which takes single value for all the axes, <br>
-             *        constructs a frey::vector{x : val, y : val, z : val}
+             *        constructs a vector{x : val, y : val, z : val}
              * \param val double
              */
             vector(double val);
             
             /* \brief A constructor which takes separate values for the axes, <br>
-             *        constructs a frey::vector{x : i, y : j, z : k}
+             *        constructs a vector{x : i, y : j, z : k}
              * \param i double for the x-axis
              * \param j double for the y-axis
              * \param k double for the z-axis
