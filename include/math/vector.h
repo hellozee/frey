@@ -1,3 +1,6 @@
+/* \file vector.h
+ * \brief Contains the definition of the vector class used for represting 3d vectors
+ */
 #ifndef FREY_VECTOR_H
 #define FREY_VECTOR_H
 
@@ -24,21 +27,18 @@ namespace frey{
             double x,y,z;
         public:
 
-            /* \fn vector()
-             * \brief An empty constructor for the frey::vector class, <br>
+            /* \brief An empty constructor for the frey::vector class, <br>
              *        constructs a frey::vector{x : 1.0, y : 1.0, z : 1.0}
              */
             vector();
             
-            /* \fn vector(double val)
-             * \brief A constructor which takes single value for all the axes, <br>
+            /* \brief A constructor which takes single value for all the axes, <br>
              *        constructs a frey::vector{x : val, y : val, z : val}
              * \param val double
              */
             vector(double val);
             
-            /* \fn vector(double i, double j, double k)
-             * \brief A constructor which takes separate values for the axes, <br>
+            /* \brief A constructor which takes separate values for the axes, <br>
              *        constructs a frey::vector{x : i, y : j, z : k}
              * \param i double for the x-axis
              * \param j double for the y-axis
@@ -46,31 +46,57 @@ namespace frey{
              */
             vector(double i, double j, double k);
             
+            /* \brief getx() returns the x co-ordinate of the current vector 
+             */
             inline double getx() const { return x; }
+
+            /* \brief gety() returns the y co-ordinate of the current vector 
+             */
             inline double gety() const { return y; }
+
+            /* \brief getz() returns the z co-ordinate of the current vector 
+             */
             inline double getz() const { return z; }
 
-            /* \fn inline double magnitude()
-             * \brief magnitude() returns the magnitude of the current vector <br>
+            /* \brief magnitude() returns the magnitude of the current vector <br>
              *        which is the square root of the sum of the squares of all <br>
              *        of its elements.
              * \return A double value which is the magnitude
              */
             inline double magnitude();
             
-            /* \fn vector normalize()
-             * \brief normalize() returns a normalized version of the current vector <br>
+            /* \brief normalize() returns a normalized version of the current vector <br>
              *        which is the current vector divided by its magnitude.
              * \return A nomalized vector 
              */
             vector normalize();
 
+            /* \brief overloading the (+) operator for adding two vectors
+             */
             inline vector operator+(const vector v);
+
+            /* \brief overloading the (!) operator for negating the current vector
+             */
             inline vector operator!();
+
+            /* \brief overloading the (-) operator for subtracting one vector from another
+             */
             inline vector operator-(const vector v);
+
+            /* \brief overloading the (*) operator for doing dot product of two vectors
+             */
             inline double operator*(const vector v);
+
+            /* \brief overloading the (^) operator for doing cross product of two vectors
+             */
             vector operator^(const vector v);
+
+            /* \brief overloading the (=) as assignment operator
+             */
             void operator=(const vector v);
+
+            /* \brief overloading the (==) operator for comparing two vectors for equivalence
+             */
             inline bool operator==(const vector v) const;
     };
 }
