@@ -14,7 +14,7 @@ frey::vector::vector(double i, double j, double k):
     x(i),y(j),z(k)
 { }
 
-double 
+inline double 
 frey::vector::magnitude()
 {
     return sqrt(x*x + y*y + z*z);
@@ -31,25 +31,25 @@ frey::vector::normalize()
     return vector(tx,ty,tz);
 }
 
-frey::vector
+inline frey::vector
 frey::vector::operator+(const frey::vector v)
 {
     return frey::vector(x+v.getx(), y+v.gety(), z+v.getz());
 }
 
-frey::vector
+inline frey::vector
 frey::vector::operator!()
 {
     return frey::vector(-x,-y,-z);
 }
 
-frey::vector
+inline frey::vector
 frey::vector::operator-(const frey::vector v)
 {
     return frey::vector(x-v.getx(), y-v.gety(), z-v.getz());
 }
 
-double
+inline double
 frey::vector::operator*(const frey::vector v)
 {
     return x*v.getx() + y*v.gety() + z*v.getz();
@@ -72,7 +72,7 @@ frey::vector::operator=(const frey::vector v)
     z = v.getz();
 }
 
-bool
+inline bool
 frey::vector::operator==(const frey::vector v) const 
 {
     return x == v.getx() && y == v.gety() && z == v.getz();
