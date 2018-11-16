@@ -5,7 +5,6 @@ cmake_minimum_required(VERSION 3.0)
 set(PROJECT_NAME frey)
 project(${PROJECT_NAME})
 
-set( CMAKE_BUILD_TYPE Release)
 set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
 set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
@@ -46,24 +45,9 @@ enable_testing()
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-set(VECTOR_TEST_SOURCES 
-    src/math/vector.cpp
-    test/math_tests/vector_test.cpp
-)
-
-add_executable(vector_tests ${VECTOR_TEST_SOURCES})
-target_link_libraries(vector_tests gtest gtest_main)
+add_subdirectory(tests)
 
 add_test(VectorTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/vector_tests)
-
-set(RAY_TEST_SOURCES 
-    src/math/ray.cpp
-    src/math/vector.cpp
-    test/math_tests/ray_test.cpp
-)
-
-add_executable(ray_tests ${RAY_TEST_SOURCES})
-target_link_libraries(ray_tests gtest gtest_main)
 
 add_test(RayTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/ray_tests)
 
