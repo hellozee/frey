@@ -48,22 +48,22 @@ namespace frey{
             
             /* \brief getx() returns the x co-ordinate of the current vector 
              */
-            inline double getx() const { return x; }
+            double getx() const { return x; }
 
             /* \brief gety() returns the y co-ordinate of the current vector 
              */
-            inline double gety() const { return y; }
+            double gety() const { return y; }
 
             /* \brief getz() returns the z co-ordinate of the current vector 
              */
-            inline double getz() const { return z; }
+            double getz() const { return z; }
 
             /* \brief magnitude() returns the magnitude of the current vector <br>
              *        which is the square root of the sum of the squares of all <br>
              *        of its elements.
              * \return A double value which is the magnitude
              */
-            inline double magnitude();
+            double magnitude();
             
             /* \brief normalize() returns a normalized version of the current vector <br>
              *        which is the current vector divided by its magnitude.
@@ -73,19 +73,19 @@ namespace frey{
 
             /* \brief overloading the (+) operator for adding two vectors
              */
-            inline vector operator+(const vector v);
+            vector operator+(const vector v);
 
             /* \brief overloading the (!) operator for negating the current vector
              */
-            inline vector operator!();
+            vector operator!();
 
             /* \brief overloading the (-) operator for subtracting one vector from another
              */
-            inline vector operator-(const vector v);
+            vector operator-(const vector v);
 
             /* \brief overloading the (*) operator for doing dot product of two vectors
              */
-            inline double operator*(const vector v);
+            double operator*(const vector v);
 
             /* \brief overloading the (^) operator for doing cross product of two vectors
              */
@@ -97,7 +97,7 @@ namespace frey{
 
             /* \brief overloading the (==) operator for comparing two vectors for equivalence
              */
-            inline bool operator==(const vector v) const;
+            bool operator==(const vector v) const;
     };
 }
 
