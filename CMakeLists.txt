@@ -46,15 +46,26 @@ enable_testing()
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-set(MATH_TEST_SOURCES 
+set(VECTOR_TEST_SOURCES 
     src/math/vector.cpp
     test/math_tests/vector_test.cpp
 )
 
-add_executable(math_tests ${MATH_TEST_SOURCES})
-target_link_libraries(math_tests gtest gtest_main)
+add_executable(vector_tests ${VECTOR_TEST_SOURCES})
+target_link_libraries(vector_tests gtest gtest_main)
 
-add_test(MathTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/math_tests)
+add_test(VectorTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/vector_tests)
+
+set(RAY_TEST_SOURCES 
+    src/math/ray.cpp
+    src/math/vector.cpp
+    test/math_tests/ray_test.cpp
+)
+
+add_executable(ray_tests ${RAY_TEST_SOURCES})
+target_link_libraries(ray_tests gtest gtest_main)
+
+add_test(RayTests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/ray_tests)
 
 # Building docs =============================================
 
