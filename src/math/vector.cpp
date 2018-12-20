@@ -46,7 +46,7 @@ frey::vector::operator!()
     return frey::vector(-x,-y,-z);
 }
 
- frey::vector
+frey::vector
 frey::vector::operator-(const frey::vector v)
 {
     return frey::vector(x-v.getx(), y-v.gety(), z-v.getz());
@@ -56,6 +56,12 @@ double
 frey::vector::operator*(const frey::vector v)
 {
     return x*v.getx() + y*v.gety() + z*v.getz();
+}
+
+frey::vector
+frey::vector::operator*(const double val)
+{
+    return frey::vector(x*val, y*val, z*val);
 }
 
 frey::vector
@@ -79,4 +85,23 @@ bool
 frey::vector::operator==(const frey::vector v) const 
 {
     return x == v.getx() && y == v.gety() && z == v.getz();
+}
+
+frey::vector
+frey::vector::operator+=(const frey::vector v)
+{
+    return *this + v;
+}
+
+frey::vector
+frey::vector::clamp()
+{
+    //lambdas look sexy
+    auto clamp_double = [](double x){
+        if (x < 0) return 0.0;
+        if (x > 1) return 1.0;
+        return x;
+    };
+
+    return frey::vector(clamp_double(x), clamp_double(y), clamp_double(y));
 }

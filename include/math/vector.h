@@ -17,7 +17,9 @@ namespace frey{
      *           (-) to be used for subtraction:<br>
      *              v = v1 - v2<br>
      *           (*) to be used for dot product:<br>
-     *              v = v1 * v2<br>
+     *              d = v1 * v2<br>
+     *           (*) can also be used for scalar product:<br>
+     *              v = v1 % 5.0<br>   
      *           (^) to be used for cross product:<br>
      *              v = v1^v2  <br>
      */
@@ -25,6 +27,7 @@ namespace frey{
     class vector{
         private:
             double x,y,z;
+
         public:
 
             /* \brief An empty constructor for the vector class, <br>
@@ -87,6 +90,10 @@ namespace frey{
              */
             double operator*(const vector v);
 
+            /* \brief overloading the (%) operator for multiplying with scalar
+             */
+            vector operator*(const double val);
+
             /* \brief overloading the (^) operator for doing cross product of two vectors
              */
             vector operator^(const vector v);
@@ -98,6 +105,14 @@ namespace frey{
             /* \brief overloading the (==) operator for comparing two vectors for equivalence
              */
             bool operator==(const vector v) const;
+
+            /* \brief overloading the (+=) operator for using both addition and assignment together
+             */
+            vector operator+=(const vector v);
+
+            /*  \brief clamp function for limiting the values between 0.0 and 1.0
+             */
+            vector clamp();
     };
 }
 
