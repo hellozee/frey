@@ -40,10 +40,6 @@ set(SOURCES
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
 
-add_dependencies(
-    frey
-)
-
 target_link_libraries( 
     frey
 )
