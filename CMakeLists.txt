@@ -35,6 +35,7 @@ set(SOURCES
     src/math/vector.cpp
     src/math/ray.cpp
     src/camera/camera.cpp
+    src/tracer/ppm.cpp
 )
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
@@ -44,7 +45,7 @@ add_dependencies(
 )
 
 target_link_libraries( 
-     frey
+    frey
 )
 
 # Building the tests ========================================
