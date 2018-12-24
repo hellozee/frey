@@ -20,6 +20,8 @@ namespace frey{
     *              d = v1 * v2<br>
     *           (*) can also be used for scalar product:<br>
     *              v = v1 * 5.0<br>
+    *           (/) to be used for dot product:<br>
+    *              v = v1 / 5.0<br>
     *           (^) to be used for cross product:<br>
     *              v = v1^v2<br>
     */
@@ -93,6 +95,10 @@ namespace frey{
             /** \brief overloading the (*) operator for multiplying with scalar
             */
             vector operator*(const double val);
+
+            /** \brief overloading the (/) operator for multiplying with scalar
+            */
+            vector operator/(const double val);
 
             /** \brief overloading the (^) operator for doing cross product of two vectors
             */

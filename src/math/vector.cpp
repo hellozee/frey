@@ -65,6 +65,12 @@ frey::vector::operator*(const double val)
 }
 
 frey::vector
+frey::vector::operator/(const double val)
+{
+    return frey::vector(x/val, y/val, z/val);
+}
+
+frey::vector
 frey::vector::operator^(const frey::vector v)
 {
     double tx = y * v.getz() - z * v.gety();
