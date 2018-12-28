@@ -5,7 +5,7 @@
 #ifndef FREY_CAMERA_H
 #define FREY_CAMERA_H
 
-#include "math/vector.h"
+#include <math/vector.h>
 
 namespace frey{
 

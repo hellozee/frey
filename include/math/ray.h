@@ -5,7 +5,7 @@
 #ifndef FREY_RAY_H
 #define FREY_RAY_H
 
-#include "math/vector.h"
+#include <math/vector.h>
 
 namespace frey{
     

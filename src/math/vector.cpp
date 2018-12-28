@@ -1,7 +1,7 @@
 /* \file vector.cpp
  */
 
-#include "math/vector.h"
+#include <math/vector.h>
 
 #include <cmath>
 
