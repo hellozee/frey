@@ -111,3 +111,11 @@ frey::vector::clamp()
 
     return frey::vector(clamp_double(x), clamp_double(y), clamp_double(y));
 }
+
+std::ostream&
+frey::operator<< (std::ostream &out, const frey::vector &v)
+{
+    out << "frey::vector{ x: " << v.getx() << ", y: " << v.gety()
+        << ", z: " << v.getz() << " }" <<std::endl;
+    return out;
+}

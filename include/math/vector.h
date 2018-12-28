@@ -4,6 +4,8 @@
 #ifndef FREY_VECTOR_H
 #define FREY_VECTOR_H
 
+#include <iostream>
+
 namespace frey{
 
     /** \class vector vector.h math/vector.h
@@ -119,7 +121,12 @@ namespace frey{
             /** \brief clamp() function for limiting the values between 0.0 and 1.0
             */
             vector clamp();
+            
+
+
     };
+
+    std::ostream& operator<< (std::ostream &out, const frey::vector &v);
 }
 
 #endif
