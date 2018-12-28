@@ -40,10 +40,6 @@ set(SOURCES
 
 add_executable( ${PROJECT_NAME} ${SOURCES})
 
-target_link_libraries( 
-    frey
-)
-
 # Building the tests ========================================
 
 add_subdirectory(external/googletest)
